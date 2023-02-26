@@ -10,7 +10,7 @@
 
     - name: Git Cloning
       git:
-        repo: https://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@github.com/kranthipasupuleti/hari-playbooks.git
+        repo: https://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@github.com/kranthipasupuleti/hari-playbooks.git
         dest: /root/snap
         force: yes
         clone: yes
