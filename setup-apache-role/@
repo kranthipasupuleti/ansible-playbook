@@ -1,0 +1,6 @@
+---
+- name: Playing Roles
+  hosts: all[0]
+  become: true
+  roles:
+    - setup-apache-role

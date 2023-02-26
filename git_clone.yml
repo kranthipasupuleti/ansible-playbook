@@ -1,0 +1,22 @@
+---
+- name: git cloning
+  hosts: all[0]
+  become: true
+  tasks:
+    - name: Git Installing
+      apt:
+        name: git
+        state: present
+
+    - name: Git Cloning
+      git:
+        repo: https://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@github.com/kranthipasupuleti/hari-playbooks.git
+        dest: /root/snap
+        force: yes
+        clone: yes
+        update: yes  
+      environment:
+       GIT_ASKPASS: /bin/echo
+       GIT_USERNAME: kranthipasupuleti
+       GIT_PASSWORD: smaran2021
+

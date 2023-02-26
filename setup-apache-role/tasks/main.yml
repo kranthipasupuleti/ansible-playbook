@@ -1,0 +1,20 @@
+---
+# tasks file for setup-apache-role
+#
+- name: GIT install
+  apt:
+    name: git
+    state: present
+
+- name: Installing Apache
+  apt:
+    name: apache2
+    state: present
+  when: ansible_os_family == "Debian"
+  notify: start apache2 service
+
+- name: copy index.html
+  copy:
+    src: ~/.ssh/index.html
+    dest: /var/www/html
+    mode: 0666
